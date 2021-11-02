@@ -38,7 +38,12 @@ cat << EOF > /tmp/db.config.json
     "user": "${CLOUDRON_POSTGRESQL_USERNAME}",
     "password": "${CLOUDRON_POSTGRESQL_PASSWORD}",
     "database": "${CLOUDRON_POSTGRESQL_USERNAME}",
-    "ssl": true
+    "ssl": 
+    {
+        "keyFilePath":"/etc/certs/tls_key.pem",
+        "certFilePath": "/etc/certs/tls_cert.pem",
+        "caFilePath":"/etc/certs/tls_cert.pem",
+    }
   }
 }
 EOF
