@@ -42,8 +42,6 @@ RUN chmod 755 /app/code/start.sh
 
 RUN chown -R cloudron:cloudron /app
 
-RUN npm install forever -g && \
-    npm install forever-monitor
 
 EXPOSE 8080
 
