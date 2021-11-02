@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -eu
+set -eu
 
 
 # ensure that data directory is owned by 'cloudron' user
@@ -27,7 +27,7 @@ export VIRTUAL_HOST=$CLOUDRON_APP_ORIGIN
 export NC_DB_JSON_FILE=/run/db.config.json
 
 
-json=$(cat <<-END
+cat << EOF > /run/db.config.json
     {
   "client": "pg",
   "connection": {
@@ -41,7 +41,7 @@ json=$(cat <<-END
     }
   }
 }
-END
+EOF
 
 echo $json > /run/db.config.json
 

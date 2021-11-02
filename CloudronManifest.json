@@ -10,7 +10,6 @@
     "sendmail": {},
     "recvmail": {},
     "postgresql": {},
-    "multiDomain": {},
     "tls": {},
     "proxyAuth": { "path": "/admin" }
   },
