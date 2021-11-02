@@ -1,0 +1,19 @@
+{
+  "id": "com.xoho.outline",
+  "title": "NocoDB",
+  "author": "Adeel Ahmad",
+  "version": "0.81.1",
+  "httpPort": 8080,
+  "addons": {
+    "localstorage": {},
+    "sendmail": {},
+    "recvmail": {},
+    "postgresql": {}
+  },
+  "manifestVersion": 2,
+  "website": "https://www.nocodb.com/",
+  "contactEmail": "adeel@xoho.tech",
+  "icon": "file://logo.png",
+  "minBoxVersion": "6.2.8",
+  "documentationUrl": "https://www.nocodb.com/"
+}
