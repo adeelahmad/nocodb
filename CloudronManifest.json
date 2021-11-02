@@ -12,7 +12,7 @@
     "postgresql": {},
     "tls": {}
   },
-  "healthCheckPath": "/",
+  "healthCheckPath": "/dashboard",
   "manifestVersion": 2,
   "website": "https://www.nocodb.com/",
   "contactEmail": "adeel@xoho.tech",

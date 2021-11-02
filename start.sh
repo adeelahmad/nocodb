@@ -10,7 +10,6 @@ echo "Starting Node.js app"
 
 
 # run the app as user 'cloudron'
-
 export NC_DB="$(echo $CLOUDRON_POSTGRESQL_URL)"
 export DATABASE_URL=$NC_DB
 export VIRTUAL_HOST=$CLOUDRON_APP_ORIGIN
@@ -25,9 +24,13 @@ export NC_MAILER_SECURE=false
 export NC_MAILER_USER=$CLOUDRON_MAIL_SMTP_USERNAME
 export NC_MAILER_PASS=$CLOUDRON_MAIL_SMTP_PASSWORD
 export NC_TOOL_DIR=/app/data
+export JWT_SEC=/app/data/jwt.secret
+
+[ -f $JWT_SEC ] && echo "$JWT_SEC exist." || openssl rand -base64 64 > $JWT_SEC
 
 
-NC_AUTH_JWT_SECRET=$(cat /app/data/jwt.secret)
+NC_AUTH_JWT_SECRET=$(cat $JWT_SEC)
+
 
 cat << EOF > /tmp/db.config.json
     {
@@ -47,7 +50,5 @@ cat << EOF > /tmp/db.config.json
   }
 }
 EOF
-
-mkdir -p /app/data
-
-HOME=/app/data npm run start
+echo "Starting app now";
+gosu cloudron:cloudron npm run start
