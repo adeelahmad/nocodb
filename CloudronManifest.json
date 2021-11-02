@@ -2,7 +2,7 @@
   "id": "com.xoho.outline",
   "title": "NocoDB",
   "author": "Adeel Ahmad",
-  "version": "0.81.1",
+  "version": "0.0.1",
   "httpPort": 8080,
   "memoryLimit": 524288000,
   "addons": {
