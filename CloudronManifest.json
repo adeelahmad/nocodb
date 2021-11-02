@@ -11,7 +11,7 @@
     "recvmail": {},
     "postgresql": {},
     "tls": {},
-    "proxyAuth": { "path": "/admin" }
+    "proxyAuth": { "path": "/dashboard" }
   },
   "manifestVersion": 2,
   "website": "https://www.nocodb.com/",
