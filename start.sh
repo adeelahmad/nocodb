@@ -22,8 +22,28 @@ export SMTP_REPLY_EMAIL=$CLOUDRON_MAIL_TO
 export SMTP_TLS_CIPHERS=
 export SMTP_SECURE=false
 export VIRTUAL_HOST=$CLOUDRON_APP_ORIGIN
-export NC_PUBLIC_UR=$CLOUDRON_APP_ORIGIN
+#export NC_PUBLIC_URL=$CLOUDRON_APP_ORIGIN
+#export NC_DASHBOARD_URL=
+export NC_DB_JSON_FILE=/run/db.config.json
 
+
+json=$(cat <<-END
+    {
+  "client": "pg",
+  "connection": {
+    "host": "${CLOUDRON_POSTGRESQL_HOST}",
+    "port": "${CLOUDRON_POSTGRESQL_PORT}",
+    "user": "${CLOUDRON_POSTGRESQL_USERNAME}",
+    "password": "${CLOUDRON_POSTGRESQL_PASSWORD}",
+    "database": "${CLOUDRON_POSTGRESQL_USERNAME}",
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  }
+}
+END
+
+echo $json > /run/db.config.json
 
 mkdir -p /app/data
 

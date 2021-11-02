@@ -4,16 +4,19 @@
   "author": "Adeel Ahmad",
   "version": "0.81.1",
   "httpPort": 8080,
+  "memoryLimit": 524288000,
   "addons": {
     "localstorage": {},
     "sendmail": {},
     "recvmail": {},
-    "postgresql": {}
+    "postgresql": {},
+    "multiDomain": {},
+    "tls": {},
+    "proxyAuth": { "path": "/admin" }
   },
   "manifestVersion": 2,
   "website": "https://www.nocodb.com/",
   "contactEmail": "adeel@xoho.tech",
   "icon": "file://logo.png",
-  "minBoxVersion": "6.2.8",
   "documentationUrl": "https://www.nocodb.com/"
 }

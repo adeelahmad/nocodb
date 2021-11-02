@@ -31,15 +31,18 @@ ENV PGSSLMODE disabled
 ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 ENV TS_ENABLED true
 ENV HOST 0.0.0.0
+ENV NC_NO_AUTH true
 
-EXPOSE 8080
-RUN chmod 755 /app/code/start.sh
-
-RUN chown -R cloudron:cloudron /app
 
 RUN sqlite3 /app/data/noco.db "VACUUM;" && \
     ln -s /app/data/noco.db /app/code/noco.db
 
+
+RUN chmod 755 /app/code/start.sh
+
+RUN chown -R cloudron:cloudron /app
+
+EXPOSE 8080
 
 USER cloudron
 
