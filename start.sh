@@ -16,10 +16,10 @@ export DATABASE_URL=$NC_DB
 export VIRTUAL_HOST=$CLOUDRON_APP_ORIGIN
 #export NC_PUBLIC_URL=$CLOUDRON_APP_ORIGIN
 #export NC_DASHBOARD_URL=
-export NC_DB_JSON_FILE=/run/db.config.json
+export NC_DB_JSON_FILE=/tmp/db.config.json
 
 
-cat << EOF > /run/db.config.json
+cat << EOF > /tmp/db.config.json
     {
   "client": "pg",
   "connection": {
